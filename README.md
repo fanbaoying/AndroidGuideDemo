@@ -9,7 +9,7 @@ Android SDK 要求 Android 2.3 及以上版本
 1. 下载SDK
 2. 在工程的AndroidManifest.xml文件中注册支付插件使用的Activity和添加插件的相关权限
 
-<h6>通用配置</h6>
+通用配置
 ```
 	<uses-permission android:name="android.permission.INTERNET"/>
     	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
@@ -18,13 +18,13 @@ Android SDK 要求 Android 2.3 及以上版本
     	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
-<h6>SDK配置</h6>
+
+SDK配置
 ```
 	<activity android:name="com.agree.mobilepay.AgreePayActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -36,7 +36,7 @@ Android SDK 要求 Android 2.3 及以上版本
         </activity>
 ```
 
-<h6>添加支付宝</h6>
+添加支付宝
 ```
         <activity        
             android:name="com.alipay.sdk.app.H5PayActivity"     
