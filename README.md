@@ -9,7 +9,7 @@ Android SDK 要求 Android 2.3 及以上版本
 1. 下载SDK
 2. 在工程的AndroidManifest.xml文件中注册支付插件使用的Activity和添加插件的相关权限
 
-通用配置
+<h6>通用配置</h6>
 ```
 	<uses-permission android:name="android.permission.INTERNET"/>
     	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
@@ -18,8 +18,25 @@ Android SDK 要求 Android 2.3 及以上版本
     	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
+<h6>SDK配置</h6>
+```
+	<activity android:name="com.agree.mobilepay.AgreePayActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
-添加支付宝
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="qwalletXXXXXXXX"/>
+            </intent-filter>
+        </activity>
+```
+
+<h6>添加支付宝</h6>
 ```
         <activity        
             android:name="com.alipay.sdk.app.H5PayActivity"     
@@ -37,10 +54,10 @@ Android SDK 要求 Android 2.3 及以上版本
 ```
 添加微信
 ```
-        <activity
+        <activity-alias
             android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true"
+            android:targetActivity="com.agree.mobilepay.AgreePayActivity"/>
 
 ```
 添加银联
