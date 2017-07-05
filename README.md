@@ -83,3 +83,36 @@ SDK配置
     	<uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
             
 ```
+## SDK使用
+1.导入SDK以及支付方的SDK
+2.调起支付方法
+```
+	// 调起支付界面
+        Agree.pay(支付页面Activity.this, 后端返回数据data, 支付类型);
+	//支付类型分别是：支付宝(alipay)、微信(wechat)、银联(uppay)
+	
+```
+3.支付回调获取
+```
+	@Override
+   	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        	super.onActivityResult(requestCode, resultCode, data);
+
+       	 	if (data == null){
+            		return;
+        	}else {
+
+            		String resultss = data.getExtras().getString("pay_result");
+            		Log.i("charge apppayresult", resultss);
+
+            		/*
+			返回8100 支付成功
+			返回8104 支付失败
+			返回8101 退出支付
+			返回8111 异常返回
+	 		*/
+			
+       		 }
+
+    	}
+```
