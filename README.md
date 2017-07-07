@@ -88,8 +88,7 @@ SDK配置
 2.调起支付方法
 ```
 	// 调起支付界面
-        Agree.pay(支付页面Activity.this, 后端返回数据data, 支付类型);
-	//支付类型分别是：支付宝(alipay)、微信(wechat)、银联(uppay)
+        Agree.pay(支付页面Activity.this, 后端返回数据data);
 	
 ```
 3.支付回调获取
