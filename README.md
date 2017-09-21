@@ -88,7 +88,13 @@ SDK配置
 2.调起支付方法
 ```
 	// 调起支付界面
-        Agree.pay(支付页面Activity.this, 后端返回数据data);
+	
+        Agree.pay(Activity.this, data, model);
+		/*
+		Activity.this 支付页面
+		data 后端返回数据
+		model "01"代表接入开发测试环境（测试版本需要）， "00"代表接入生产环境（正式版本需要；
+	 	*/	
 	
 ```
 3.支付回调获取
