@@ -94,7 +94,11 @@ SDK配置
 		Activity.this 支付页面
 		data 后端返回数据
 		model "01"代表接入开发测试环境（测试版本需要）， "00"代表接入生产环境（正式版本需要；
-	 	*/	
+	 	*/
+		/*
+		data格式
+		{"result":{"credential":{"package":"Sign=WXPay","appid":"wx70f5a8edb3744188","sign":"E585063A42CD6511870A088B4ADDF447","partnerid":"1487185052","prepayid":"wx20170921175713d0443f291f0895297416","noncestr":"4se4b65rd9qki81d8o9oaqk19mfa60zo","timestamp":"1505987833"},"payChannel":"WEIXIN","TrxNo":"20170921175713992425787"},"message":"成功","respCode":"000000"}
+		*/
 	
 ```
 3.支付回调获取
